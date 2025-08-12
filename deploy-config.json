@@ -1,0 +1,22 @@
+{
+  "app": {
+    "name": "LUNION Education",
+    "version": "1.0.0",
+    "environment": "production"
+  },
+  "deployment": {
+    "platform": "vercel",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "framework": "vite"
+  },
+  "features": {
+    "commissionModel": true,
+    "commissionRate": "1%",
+    "adminPrivileges": true,
+    "notifications": true,
+    "userProfile": true,
+    "establishmentManagement": true,
+    "userManagement": true
+  }
+}
