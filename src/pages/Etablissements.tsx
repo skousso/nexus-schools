@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Plus, Search, Filter, Download } from "lucide-react";
 import DashboardLayout from "@/components/DashboardLayout";
 import EstablishmentCard from "@/components/EstablishmentCard";
+import CreateEstablishmentModal from "@/components/CreateEstablishmentModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -106,10 +107,7 @@ export default function Etablissements() {
               <Download className="h-4 w-4 mr-2" />
               Exporter
             </Button>
-            <Button variant="default">
-              <Plus className="h-4 w-4 mr-2" />
-              Nouvel Établissement
-            </Button>
+            <CreateEstablishmentModal />
           </div>
         </div>
 

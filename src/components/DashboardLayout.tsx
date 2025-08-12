@@ -20,12 +20,12 @@ interface DashboardLayoutProps {
 }
 
 const navigation = [
-  { name: "Tableau de bord", href: "/", icon: Home, current: true },
-  { name: "Établissements", href: "/etablissements", icon: School, current: false },
-  { name: "Utilisateurs", href: "/utilisateurs", icon: Users, current: false },
-  { name: "Paiements", href: "/paiements", icon: CreditCard, current: false },
-  { name: "Analytics", href: "/analytics", icon: BarChart3, current: false },
-  { name: "Paramètres", href: "/parametres", icon: Settings, current: false },
+  { name: "Tableau de bord", href: "/", icon: Home },
+  { name: "Établissements", href: "/etablissements", icon: School },
+  { name: "Utilisateurs", href: "/utilisateurs", icon: Users },
+  { name: "Paiements", href: "/paiements", icon: CreditCard },
+  { name: "Analytics", href: "/analytics", icon: BarChart3 },
+  { name: "Paramètres", href: "/parametres", icon: Settings },
 ];
 
 export default function DashboardLayout({ children, currentPage }: DashboardLayoutProps) {
@@ -47,14 +47,18 @@ export default function DashboardLayout({ children, currentPage }: DashboardLayo
           </div>
           <nav className="mt-6 px-3 space-y-2">
             {navigation.map((item) => (
-              <Button
+              <a
                 key={item.name}
-                variant={item.name === currentPage ? "default" : "ghost"}
-                className="w-full justify-start gap-3"
+                href={item.href}
+                className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition-smooth ${
+                  item.name === currentPage 
+                    ? 'bg-gradient-primary text-primary-foreground shadow-glow' 
+                    : 'text-muted-foreground hover:bg-secondary hover:text-secondary-foreground'
+                }`}
               >
                 <item.icon className="h-5 w-5" />
                 {item.name}
-              </Button>
+              </a>
             ))}
           </nav>
         </div>
@@ -70,14 +74,18 @@ export default function DashboardLayout({ children, currentPage }: DashboardLayo
           </div>
           <nav className="flex-1 mt-6 px-3 space-y-2">
             {navigation.map((item) => (
-              <Button
+              <a
                 key={item.name}
-                variant={item.name === currentPage ? "default" : "ghost"}
-                className="w-full justify-start gap-3"
+                href={item.href}
+                className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition-smooth ${
+                  item.name === currentPage 
+                    ? 'bg-gradient-primary text-primary-foreground shadow-glow' 
+                    : 'text-muted-foreground hover:bg-secondary hover:text-secondary-foreground'
+                }`}
               >
                 <item.icon className="h-5 w-5" />
                 {item.name}
-              </Button>
+              </a>
             ))}
           </nav>
         </div>

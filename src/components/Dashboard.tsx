@@ -11,6 +11,7 @@ import {
 import StatsCard from "./StatsCard";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import CreateEstablishmentModal from "./CreateEstablishmentModal";
 import heroImage from "@/assets/hero-banner.jpg";
 
 // Mock data
@@ -113,9 +114,7 @@ export default function Dashboard() {
             <p className="text-primary-foreground/90 text-lg max-w-md">
               Gérez efficacement vos établissements scolaires et suivez vos performances en temps réel.
             </p>
-            <Button variant="premium" className="mt-4">
-              Nouvel Établissement
-            </Button>
+            <CreateEstablishmentModal />
           </div>
           <div className="relative">
             <img 
